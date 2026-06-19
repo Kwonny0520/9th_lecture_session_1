@@ -1,6 +1,13 @@
 🚀 GitHub 실습 및 과제 제출 가이드
+## 👥 동아리 부원 목록
 
-[👉 동아리 부원 방명록 구경하러 가기](./members.html)
+아래 링크를 클릭하면 부원들의 방명록을 볼 수 있습니다!
+
+{% for page in site.pages %}
+  {% if page.path contains 'members/' %}
+  - [👉 {{ page.title }} 님의 방명록 보기]({{ site.baseurl }}{{ page.url }})
+  {% endif %}
+{% endfor %}
 
 ## 📌 실습 개요
 본 저장소는 **학술동아리** 신입 부원 및 프로젝트 팀원들을 위한 **Git/GitHub 온보딩 실습 공간**입니다. 
