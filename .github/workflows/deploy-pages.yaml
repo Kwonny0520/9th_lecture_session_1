@@ -1,0 +1,49 @@
+name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 1. 빌드(Build) 작업: 마크다운 파일을 읽어서 HTML로 변환하는 과정
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (저장소 코드 가져오기)
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages (페이지 기본 설정)
+        uses: actions/configure-pages@v5
+        
+      - name: Build with Jekyll (마크다운을 웹페이지로 변환!)
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+          
+      - name: Upload artifact (변환된 웹페이지 파일들을 업로드 대기열에 올림)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  # 2. 배포(Deploy) 작업: 변환된 HTML 파일들을 실제 웹사이트로 띄우는 과정
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages (실제 배포)
+        id: deployment
+        uses: actions/deploy-pages@v4
