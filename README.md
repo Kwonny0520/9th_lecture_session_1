@@ -12,7 +12,7 @@
 본 저장소는 YSAL 8기, 9기 회원들을 위한 Git/GitHub 온보딩 실습 공간입니다.
 협업의 핵심인 Fork, Clone, Branch, Commit, Push, Pull Request(PR)의 전체 프로세스를 직접 경험하며 GitHub를 통한 협업 흐름을 익히는 것을 목표로 합니다.
 
-우리는 이번 실습을 통해 members/ 폴더에 각자의 프로필 마크다운 파일을 추가하여 동아리 부원 전체의 방명록 웹사이트를 함께 완성해 볼 예정입니다.
+우리는 이번 실습을 통해 members/ 폴더에 각자의 프로필 마크다운 파일을 추가하여 학회원 전체의 방명록 웹사이트를 함께 완성해 볼 예정입니다.
 
 --- 
 
@@ -38,7 +38,7 @@
 - 이제 본인의 개인 GitHub 계정 아래에 동일한 이름의 복사본 저장소가 생성됩니다.
 
 ### 2단계. 내 컴퓨터로 가져오기 (Clone)
-- Fork된 본인 소유의 GitHub 저장소로 이동합니다. (인터넷 주소창에 동아리 계정이 아닌 본인의 GitHub 아이디가 포함되어 있는지 꼭 확인하세요!)
+- Fork된 본인 소유의 GitHub 저장소로 이동합니다. (인터넷 주소창에 학회 계정이 아닌 본인의 GitHub 아이디가 포함되어 있는지 꼭 확인하세요!)
 - 초록색 [<> Code] 버튼을 누르고, HTTPS 탭에 있는 URL 주소를 복사합니다.
 - 컴퓨터에서 에디터(VS Code) 또는 GitHub Desktop을 열고, 복사한 주소를 사용하여 프로젝트를 Clone(다운로드) 합니다.
 - VS Code의 경우: Ctrl + Shift + P (Mac은 Cmd + Shift + P) -> Git: Clone 입력 -> 주소 붙여넣기
@@ -62,18 +62,18 @@
 - 커밋한 내용을 인터넷에 있는 본인의 Fork 저장소로 업로드합니다.
 - VS Code 소스 제어 탭의 [Publish Branch] 또는 [Sync Changes] 버튼을 누르거나, GitHub Desktop 상단의 [Publish branch] 버튼을 눌러 Push를 완료합니다.
 
-### 6단계. 동아리 원본 저장소로 반영 요청하기 (Pull Request)
-- Push를 마치고 다시 동아리 원본 GitHub 저장소로 접속합니다.
+### 6단계. 학회 원본 저장소로 반영 요청하기 (Pull Request)
+- Push를 마치고 다시 학회 원본 GitHub 저장소로 접속합니다.
 - 화면 상단에 초록색 [Compare & pull request] 버튼이 활성화되어 있는 것을 볼 수 있습니다. 버튼을 클릭합니다.
 - PR 제목과 내용을 확인한 뒤, 우측 하단의 [Create pull request] 버튼을 누르면 과제 제출이 완료됩니다! 🎉
 
 #### 🔄 과제 제출 후 내 저장소 최신화하기 (Sync Fork)
-- 동아리 원본 저장소에 내 코드가 최종 병합(Merge)되거나 다른 부원들의 과제가 반영되더라도, 본인의 개인 GitHub 저장소(Fork)와 컴퓨터에 있는 로컬 코드는 자동으로 업데이트되지 않습니다. 
+- 학회 원본 저장소에 내 코드가 최종 병합(Merge)되거나 다른 부원들의 과제가 반영되더라도, 본인의 개인 GitHub 저장소(Fork)와 컴퓨터에 있는 로컬 코드는 자동으로 업데이트되지 않습니다. 
 - 다음 실습이나 프로젝트를 진행하기 위해 아래 방법으로 저장소를 최신 상태로 유지해 주세요.
 
 #### 💡 동기화 방법
 - 본인의 GitHub 계정에 있는 Fork된 저장소 페이지로 이동합니다.
-- 메인 화면 중간에 있는 [Sync fork] 버튼을 누르고, [Update branch]를 클릭합니다. (동아리 원본의 최신 상태가 내 GitHub로 동기화됩니다.)
+- 메인 화면 중간에 있는 [Sync fork] 버튼을 누르고, [Update branch]를 클릭합니다. (학회 저장소 원본의 최신 상태가 내 GitHub로 동기화됩니다.)
 - 컴퓨터에서 VS Code나 GitHub Desktop을 열고 브랜치를 main으로 변경(Checkout)한 뒤, [Pull] 또는 [Sync Changes]를 눌러 최신 코드를 다운로드합니다.
 - 작업하던 브랜치로 다시 변경한 뒤 'Choose a branch to merge into [작업 브랜치]' 버튼을 눌러 main 브랜치를 작업중인 브랜치로 합칩니다
 - 반드시 'merge main into [작업 브랜치]' 형식으로 작동해야 합니다!
